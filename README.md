@@ -1,2 +1,4 @@
-# Config
-Some config files I've gotten used to.
+# .dotfiles
+
+Configuration for everything that's important.
+Feel free to copy anything you like.
