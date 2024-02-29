@@ -68,6 +68,6 @@ return {
 	},
 	{ "j-hui/fidget.nvim", opts = {} },
 	{ "laytan/cloak.nvim", opts = {} },
-	{ "echasnovski/mini.ai", version = "*" },
-	{ "echasnovski/mini.surround", version = "*" },
+	{ "echasnovski/mini.ai", version = "*", opts = {} },
+	{ "echasnovski/mini.surround", version = "*", opts = {} },
 }
