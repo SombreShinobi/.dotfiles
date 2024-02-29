@@ -2,7 +2,7 @@ return {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
-		lazy = false,
+		event = "VeryLazy",
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				sync_install = false,
@@ -40,5 +40,5 @@ return {
 			})
 		end,
 	},
-	{ "nvim-treesitter/nvim-treesitter-context", opts = {} },
+	{ "nvim-treesitter/nvim-treesitter-context", event = "VeryLazy", opts = {} },
 }
