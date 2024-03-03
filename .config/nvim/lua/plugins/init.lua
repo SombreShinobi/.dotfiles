@@ -57,16 +57,8 @@ return {
 	},
 	-- Convenience
 	{ "numToStr/Comment.nvim", opts = {} },
+	{ "folke/todo-comments.nvim", depentencies = { "nvim-lua/plenary.nvim" }, opts = { signs = false } },
 	"mbbill/undotree",
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-		opts = {
-			whitespace = {
-				remove_blankline_trail = true,
-			},
-		},
-	},
 	{ "j-hui/fidget.nvim", opts = {} },
 	{ "laytan/cloak.nvim", opts = {} },
 	{ "echasnovski/mini.ai", version = "*", opts = {} },

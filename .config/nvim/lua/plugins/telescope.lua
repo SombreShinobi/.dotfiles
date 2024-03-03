@@ -1,8 +1,18 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		version = "*",
-		dependencies = { "nvim-lua/plenary.nvim" },
+		version = "0.1.x",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			{
+				"nvim-telescope/telescope-fzf-native.nvim",
+				build = "make",
+				cond = function()
+					return vim.fn.executable("make") == 1
+				end,
+			},
+			"nvim-tree/nvim-web-devicons",
+		},
 		event = "VeryLazy",
 		config = function()
 			local builtin = require("telescope.builtin")
@@ -28,13 +38,6 @@ return {
 				builtin.find_files({ hidden = true, no_ignore = true })
 			end)
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics)
-		end,
-	},
-	{
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "make",
-		cond = function()
-			return vim.fn.executable("make") == 1
 		end,
 	},
 }
