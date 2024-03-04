@@ -3,6 +3,9 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		event = "VeryLazy",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter-textobjects",
+		},
 		config = function()
 			require("nvim-treesitter.configs").setup({
 				sync_install = false,
@@ -29,7 +32,6 @@ return {
 					"go",
 					"python",
 				},
-
 				highlight = {
 					enable = true,
 				},

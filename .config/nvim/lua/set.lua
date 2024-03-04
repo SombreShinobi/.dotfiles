@@ -39,5 +39,7 @@ vim.opt.mouse = nil
 
 vim.api.nvim_create_autocmd("TextYankPost", {
 	group = vim.api.nvim_create_augroup("highlight-yank", { clear = true }),
-	callback = vim.highlight.on_yank,
+	callback = function()
+		vim.highlight.on_yank()
+	end,
 })

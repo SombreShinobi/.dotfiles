@@ -61,6 +61,21 @@ return {
 	"mbbill/undotree",
 	{ "j-hui/fidget.nvim", opts = {} },
 	{ "laytan/cloak.nvim", opts = {} },
-	{ "echasnovski/mini.ai", version = "*", opts = {} },
+	{
+		"echasnovski/mini.ai",
+		version = "*",
+		lazy = false,
+		config = function()
+			local mini = require("mini.ai")
+			local treesitter = mini.gen_spec.treesitter
+
+			mini.setup({
+				custom_textobjects = {
+					F = treesitter({ a = "@function.outer", i = "@function.inner" }),
+					c = treesitter({ a = "@class.outer", i = "@class.inner" }),
+				},
+			})
+		end,
+	},
 	{ "echasnovski/mini.surround", version = "*", opts = {} },
 }
