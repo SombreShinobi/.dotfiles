@@ -13,7 +13,7 @@ return {
 			},
 			"nvim-tree/nvim-web-devicons",
 		},
-		event = "VeryLazy",
+		event = "VimEnter",
 		config = function()
 			local builtin = require("telescope.builtin")
 			local telescope = require("telescope")
