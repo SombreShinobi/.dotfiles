@@ -57,7 +57,17 @@ return {
 	},
 	-- Convenience
 	{ "numToStr/Comment.nvim", opts = {} },
-	{ "folke/todo-comments.nvim", depentencies = { "nvim-lua/plenary.nvim" }, opts = { signs = false } },
+	{
+		"folke/todo-comments.nvim",
+		depentencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			local todo = require("todo-comments")
+			todo.setup({ signs = false })
+
+			vim.keymap.set("n", "<leader>tt", "<cmd>TodoTelescope<CR>")
+			vim.keymap.set("n", "<leader>tb", "<cmd>TodoTrouble<CR>")
+		end,
+	},
 	"mbbill/undotree",
 	{ "j-hui/fidget.nvim", opts = {} },
 	{ "laytan/cloak.nvim", opts = {} },
