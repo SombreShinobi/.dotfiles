@@ -2,6 +2,7 @@ return {
 	{
 		"nvim-telescope/telescope.nvim",
 		version = "0.1.x",
+		event = "VimEnter",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			{
@@ -13,7 +14,6 @@ return {
 			},
 			"nvim-tree/nvim-web-devicons",
 		},
-		event = "VimEnter",
 		config = function()
 			local builtin = require("telescope.builtin")
 			local telescope = require("telescope")
