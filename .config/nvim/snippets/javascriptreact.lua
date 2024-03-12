@@ -1,7 +1,7 @@
 return {
 	s(
 		"cmpfn",
-		fmt("export default function {}({}) {{\n\treturn <div>{}</div>\n}};", {
+		fmt("export default function {}({}) {{\n\treturn <div>{}</div>;\n}}", {
 			i(1),
 			i(2),
 			i(0),
