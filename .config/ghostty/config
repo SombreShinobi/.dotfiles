@@ -1,0 +1,16 @@
+theme = tokyonight
+background-opacity = 0.9
+
+font-size = 16
+font-family = UbuntuMono Nerd Font Mono
+font-family-bold = UbuntuMono Nerd Font Mono Bold
+font-family-italic = UbuntuMono Nerd Font Mono Bold Italic
+font-family-bold-italic = UbuntuMono Nerd Font Mono Italic
+
+cursor-style = block
+
+window-width = 215
+window-height = 67
+window-decoration = false
+
+shell-integration-features = no-cursor

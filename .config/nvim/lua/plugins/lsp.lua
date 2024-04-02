@@ -18,6 +18,7 @@ return {
 		},
 	},
 	config = function()
+		local lspconfig = require("lspconfig")
 		local on_attach = function(_, bufnr)
 			local opts = { buffer = bufnr }
 			local telescope_builtin = require("telescope.builtin")
@@ -64,7 +65,13 @@ return {
 			},
 			eslint = {},
 			pyright = {},
-			gopls = {},
+			gopls = {
+				analyses = {
+					unusedparams = true,
+				},
+				staticcheck = true,
+				gofumpt = true,
+			},
 		}
 		local mason_lspconfig = require("mason-lspconfig")
 
@@ -101,6 +108,17 @@ return {
 		end, { silent = true })
 
 		require("luasnip.loaders.from_lua").load({ paths = { "~/.config/nvim/snippets" } })
+
+		vim.diagnostic.config({
+			float = {
+				focusable = false,
+				style = "minimal",
+				border = "rounded",
+				source = "always",
+				header = "",
+				prefix = "",
+			},
+		})
 
 		cmp.setup({
 			preselect = "item",
