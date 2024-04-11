@@ -18,7 +18,6 @@ return {
 		},
 	},
 	config = function()
-		local lspconfig = require("lspconfig")
 		local on_attach = function(_, bufnr)
 			local opts = { buffer = bufnr }
 			local telescope_builtin = require("telescope.builtin")
@@ -49,10 +48,14 @@ return {
 			zls = {},
 			clangd = {},
 			tsserver = {},
-			html = { filetypes = { "html", "twig", "hbs" } },
+			html = { filetypes = { "html", "twig", "hbs", "templ" } },
+			htmx = { filetypes = { "html", "templ" } },
 			cssls = {},
 			cssmodules_ls = {},
-			tailwindcss = {},
+			tailwindcss = {
+				filetypes = { "html", "templ", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+				init_options = { userLanguages = { templ = "html" } },
+			},
 			yamlls = {},
 			dockerls = {},
 			docker_compose_language_service = {},

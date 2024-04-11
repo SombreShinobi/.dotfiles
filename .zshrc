@@ -35,3 +35,6 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 eval "$(fzf --zsh)"
+
+export TEMPL="$HOME/go/bin"
+export PATH="$TEMPL:$PATH"

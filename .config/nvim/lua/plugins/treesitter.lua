@@ -40,6 +40,11 @@ return {
 					disable = { "python" },
 				},
 			})
+			vim.filetype.add({
+				extension = {
+					templ = "templ",
+				},
+			})
 		end,
 	},
 	{ "nvim-treesitter/nvim-treesitter-context", event = "VeryLazy", opts = {} },
