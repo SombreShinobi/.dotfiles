@@ -1,6 +1,7 @@
 return {
 	"stevearc/conform.nvim",
 	opts = {
+		async = true,
 		formatters_by_ft = {
 			lua = { "stylua" },
 			javascript = { { "prettierd", "prettier" } },
