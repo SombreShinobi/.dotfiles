@@ -12,6 +12,7 @@ return {
 					F = treesitter({ a = "@function.outer", i = "@function.inner" }),
 					c = treesitter({ a = "@class.outer", i = "@class.inner" }),
 				},
+				n_lines = 500,
 			})
 		end,
 	},

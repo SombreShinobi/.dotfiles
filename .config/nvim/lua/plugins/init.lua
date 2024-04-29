@@ -15,6 +15,9 @@ return {
 			vim.cmd.colorscheme("tokyonight-night")
 		end,
 	},
+	{ "echasnovski/mini.statusline", version = "*", opts = {
+		set_vim_settings = false,
+	} },
 	-- Git
 	{
 		"tpope/vim-fugitive",

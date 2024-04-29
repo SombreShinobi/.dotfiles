@@ -5,7 +5,11 @@ vim.g.have_nerd_font = true
 
 vim.g.netrw_banner = 0
 
+vim.g.laststatus = 3
+
 vim.opt.guicursor = { "n-v-c-sm:block", "i-ci-ve:ver25", "r-cr-o:hor20" }
+
+vim.opt.showmode = false
 
 vim.opt.hlsearch = false
 vim.opt.incsearch = true
