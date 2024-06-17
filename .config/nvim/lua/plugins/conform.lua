@@ -8,6 +8,7 @@ return {
 			typescript = { { "prettierd", "prettier" } },
 			javascriptreact = { { "prettierd", "prettier" } },
 			typescriptreact = { { "prettierd", "prettier" } },
+			json = { { "prettierd", "prettier" } },
 			go = { { "gofumpt" } },
 			templ = { { "templ" } },
 		},
