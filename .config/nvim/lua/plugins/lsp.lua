@@ -36,7 +36,7 @@ local function setup_servers()
 		hls = { filetypes = { "haskell", "lhaskell", "hk" } },
 		zls = {},
 		clangd = {},
-		tsserver = {},
+		ts_ls = {},
 		html = { filetypes = { "html", "twig", "hbs", "templ" } },
 		htmx = { filetypes = { "html", "templ" } },
 		cssls = {},

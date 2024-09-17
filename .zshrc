@@ -24,11 +24,6 @@ source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 # opam configuration
 [[ ! -r /Users/sibin/.opam/opam-init/init.zsh ]] || source /Users/sibin/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null
 
-# fnm
-eval "$(fnm env --use-on-cd)"
-export PATH="/Users/sibin/Library/Application Support/fnm:$PATH"
-eval "`fnm env`"
-
 [ -f "/Users/sibin/.ghcup/env" ] && source "/Users/sibin/.ghcup/env" # ghcup-env
 
 # bun completions
@@ -47,3 +42,7 @@ export PATH="$TEMPL:$PATH"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 alias ll="ls --color=auto -lhaF"
+
+VIM="nvim"
+export GIT_EDITOR=$VIM
+alias vim="$VIM"
