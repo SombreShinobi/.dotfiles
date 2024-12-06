@@ -46,3 +46,18 @@ alias ll="ls --color=auto -lhaF"
 VIM="nvim"
 export GIT_EDITOR=$VIM
 alias vim="$VIM"
+
+# Git
+alias gs="git status"
+alias gsw="git switch"
+alias gsp="git switch -"
+alias gsm="git switch main"
+alias gfp="git fetch && git pull"
+alias gr="git rebase"
+alias gro="git rebase -X ours"
+alias gpf="git push --force-with-lease"
+
+# Docker
+alias od="open -a docker"
+alias ds="docker stop"
+alias dsa="docker start -a"

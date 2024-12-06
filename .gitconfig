@@ -1,0 +1,23 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gpg]
+	format = openpgp
+	program = gpg
+[commit]
+	gpgSign = false
+[tag]
+	forceSignAnnotated = false
+[gpg "ssh"]
+	program = ssh-keygen
+	allowedSignersFile = ""
+[rerere]
+	enabled = true
+
+[includeIf "gitdir:~/Documents/work/"]
+    path = "~/.gitconfig.work"
+
+[includeIf "gitdir:~/Documents/personal/"]
+    path = "~/.gitconfig.personal"

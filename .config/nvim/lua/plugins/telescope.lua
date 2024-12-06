@@ -30,12 +30,18 @@ return {
 				}))
 			end)
 
-			vim.keymap.set("n", "<leader>sf", builtin.find_files)
+			vim.keymap.set("n", "<leader>sf", function()
+				builtin.find_files({ hidden = true })
+			end)
 			vim.keymap.set("n", "<leader>st", builtin.help_tags)
 			vim.keymap.set("n", "<leader>sw", builtin.grep_string)
 			vim.keymap.set("n", "<leader>sg", builtin.live_grep)
 			vim.keymap.set("n", "<leader>sh", function()
-				builtin.find_files({ hidden = true, no_ignore = true })
+				builtin.find_files({
+					hidden = true,
+					no_ignore = true,
+					file_ignore_patterns = { "node_modules" },
+				})
 			end)
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics)
 		end,

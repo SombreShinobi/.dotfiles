@@ -1,22 +1,5 @@
 return {
 	{
-		"echasnovski/mini.ai",
-		version = "*",
-		lazy = false,
-		config = function()
-			local ai = require("mini.ai")
-			local treesitter = ai.gen_spec.treesitter
-
-			ai.setup({
-				custom_textobjects = {
-					F = treesitter({ a = "@function.outer", i = "@function.inner" }),
-					c = treesitter({ a = "@class.outer", i = "@class.inner" }),
-				},
-				n_lines = 500,
-			})
-		end,
-	},
-	{
 		"echasnovski/mini.surround",
 		version = "*",
 		lazy = false,
@@ -28,9 +11,6 @@ return {
 				custom_surroundings = {
 					F = {
 						input = treesitter({ outer = "@function.outer", inner = "@function.inner" }),
-					},
-					c = {
-						input = treesitter({ outer = "@class.outer", inner = "@class.inner" }),
 					},
 				},
 			})
