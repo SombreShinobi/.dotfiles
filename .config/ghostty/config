@@ -12,4 +12,4 @@ cursor-style = block
 window-width = 215
 window-height = 67
 window-decoration = false
-
+shell-integration-features = no-cursor,no-sudo,title
