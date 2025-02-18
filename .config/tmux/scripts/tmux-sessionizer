@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
-if [[ $# -eq 1 ]]; then
+[ $# -eq 1 ] || called_with_arg=1
+
+if [[ -z $called_with_arg ]]; then
     selected=$1
 else
     selected=$(find  ~/ ~/.dotfiles ~/.dotfiles/.config ~/Documents ~/Documents/work ~/Documents/personal ~/Documents/writing/published ~/Documents/writing/unpublished -maxdepth 1 -mindepth 1 -type d | fzf)
@@ -19,7 +21,11 @@ if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
 fi
 
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
-    tmux new-session -ds $selected_name -c $selected
+    tmux new-session -ds $selected_name -c $selected 
 fi
 
-tmux switch-client -t $selected_name
+if [[ $(tmux list-windows -t $selected_name | wc -l) -eq 1 ]] && [[ -z $called_with_arg ]]; then
+    tmux neww -t $selected_name -c $selected
+fi
+
+tmux switch-client -t $selected_name:1

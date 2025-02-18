@@ -56,6 +56,7 @@ alias gfp="git fetch && git pull"
 alias gr="git rebase"
 alias gro="git rebase -X ours"
 alias gpf="git push --force-with-lease"
+alias gfrm="gsm && gfp && gsp && gr main && gpf"
 
 # Docker
 alias od="open -a docker"
