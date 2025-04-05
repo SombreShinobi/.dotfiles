@@ -47,7 +47,7 @@ VIM="nvim"
 export GIT_EDITOR=$VIM
 alias vim="$VIM"
 
-# Git
+# git
 alias gs="git status"
 alias gsw="git switch"
 alias gsp="git switch -"
@@ -58,7 +58,43 @@ alias gro="git rebase -X ours"
 alias gpf="git push --force-with-lease"
 alias gfrm="gsm && gfp && gsp && gr main && gpf"
 
-# Docker
+# docker
 alias od="open -a docker"
 alias ds="docker stop"
 alias dsa="docker start -a"
+
+# tmux
+alias tk="tmux kill-server"
+alias ta="tmux attach"
+
+# apple stuff
+alias pl-build='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/build.sh'
+alias pl-console='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/console.sh'
+alias pl-down='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/down.sh'
+alias pl-gradle='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/gradle.sh'
+alias pl-logs='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/logs.sh'
+alias pl-restart='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/restart.sh'
+alias pl-start='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/start.sh'
+alias pl-status='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/status.sh'
+alias pl-stop='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/stop.sh'
+alias pl-up='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/up.sh'
+alias pl-aws-login='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/aws-login.sh'
+alias pl-pr='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/pr.sh'
+alias pl-sidecars-destroy='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/sidecars-destroy.sh'
+alias pl-sidecars-stop='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/sidecars-stop.sh'
+alias pl-build='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/build.sh'
+alias pl-console='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/console.sh'
+alias pl-down='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/down.sh'
+alias pl-gradle='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/gradle.sh'
+alias pl-logs='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/logs.sh'
+alias pl-restart='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/restart.sh'
+alias pl-start='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/start.sh'
+alias pl-status='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/status.sh'
+alias pl-stop='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/stop.sh'
+alias pl-up='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/up.sh'
+alias pl-aws-login='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/aws-login.sh'
+alias pl-pr='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/pr.sh'
+alias pl-sidecars-destroy='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/sidecars-destroy.sh'
+alias pl-sidecars-stop='sh /Users/sibin/Documents/work/platoon-gateway-service/environment/scripts/sidecars-stop.sh'
+source /Users/sibin/.platoon_aliases
+source /Users/sibin/.platoon_functions

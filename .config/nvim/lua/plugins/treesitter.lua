@@ -31,6 +31,7 @@ return {
 					"haskell",
 					"go",
 					"python",
+					"swift",
 				},
 				highlight = {
 					enable = true,

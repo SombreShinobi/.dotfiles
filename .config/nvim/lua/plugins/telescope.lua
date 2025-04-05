@@ -40,7 +40,13 @@ return {
 				builtin.find_files({
 					hidden = true,
 					no_ignore = true,
-					file_ignore_patterns = { "node_modules" },
+					file_ignore_patterns = { "node_modules", ".git" },
+				})
+			end)
+			vim.keymap.set("n", "<leader>sa", function()
+				builtin.find_files({
+					hidden = true,
+					no_ignore = true,
 				})
 			end)
 			vim.keymap.set("n", "<leader>sd", builtin.diagnostics)
