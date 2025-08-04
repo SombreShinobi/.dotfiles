@@ -29,84 +29,13 @@ local function on_attach(_, bufnr)
 	lsp_map("<leader>q", vim.diagnostic.setloclist)
 end
 
-local function setup_servers()
-	local servers = {
-		rust_analyzer = {},
-		hls = { filetypes = { "haskell", "lhaskell", "hk" } },
-		zls = {},
-		clangd = {},
-		ts_ls = {},
-		html = { filetypes = { "html", "twig", "hbs", "templ" } },
-		htmx = { filetypes = { "html", "templ" } },
-		cssls = {},
-		cssmodules_ls = {},
-		tailwindcss = {
-			filetypes = { "html", "templ", "javascript", "typescript", "javascriptreact", "typescriptreact" },
-			init_options = { userLanguages = { templ = "html" } },
-		},
-		yamlls = {},
-		dockerls = {},
-		docker_compose_language_service = {},
-		bashls = {},
-		lua_ls = {
-			Lua = {
-				workspace = { checkThirdParty = false },
-				telemetry = { enable = false },
-			},
-		},
-		eslint = {},
-		pyright = {},
-		gopls = {
-			analyses = {
-				unusedparams = true,
-			},
-			staticcheck = true,
-			gofumpt = true,
-		},
-	}
-	local mason_lspconfig = require("mason-lspconfig")
-
-	mason_lspconfig.setup({
-		ensure_installed = vim.tbl_keys(servers),
-		automatic_installation = true,
-	})
-
-	local capabilities = require("blink.cmp").get_lsp_capabilities()
-
-	mason_lspconfig.setup_handlers({
-		function(server_name)
-			local conf = require("lspconfig")
-			conf[server_name].setup({
-				capabilities = capabilities,
-				on_attach = on_attach,
-				settings = servers[server_name],
-				filetypes = (servers[server_name] or {}).filetypes,
-			})
-			conf.sourcekit.setup({
-				capabilities = {
-					workspace = {
-						didChangeWatchedFiles = {
-							dynamicRegistration = true,
-						},
-					},
-				},
-			})
-		end,
-	})
-end
-
 return {
-	"neovim/nvim-lspconfig",
+	"mason-org/mason-lspconfig.nvim",
 	event = "VeryLazy",
 	dependencies = {
-		{ "williamboman/mason.nvim", opts = {} },
-		"williamboman/mason-lspconfig.nvim",
-		{
-			"folke/lazydev.nvim",
-			opts = {
-				library = { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-			},
-		},
+		{ "mason-org/mason.nvim", opts = {} },
+		"neovim/nvim-lspconfig",
+		"mfussenegger/nvim-jdtls",
 		{
 			"saghen/blink.cmp",
 			version = "*",
@@ -129,16 +58,68 @@ return {
 		},
 	},
 	config = function()
-		vim.diagnostic.config({
-			float = {
-				focusable = false,
-				style = "minimal",
-				border = "rounded",
-				header = "",
-				prefix = "",
+		local servers = {
+			zls = {},
+			clangd = {},
+			ts_ls = {},
+			html = { filetypes = { "html", "twig", "hbs", "templ" } },
+			htmx = { filetypes = { "html", "templ" } },
+			cssls = {},
+			cssmodules_ls = {},
+			tailwindcss = {
+				filetypes = { "html", "templ", "javascript", "typescript", "javascriptreact", "typescriptreact" },
+				init_options = { userLanguages = { templ = "html" } },
 			},
+			yamlls = {},
+			dockerls = {},
+			docker_compose_language_service = {},
+			bashls = {},
+			lua_ls = {
+				Lua = {
+					telemetry = { enable = false },
+					workspace = {
+						checkThirdParty = false,
+						library = vim.api.nvim_get_runtime_file("", true),
+					},
+				},
+			},
+			eslint = {},
+			gopls = {
+				analyses = {
+					unusedparams = true,
+				},
+				staticcheck = true,
+				gofumpt = true,
+			},
+			jdtls = {},
+			sqlls = {},
+		}
+
+		local masonConf = require("mason-lspconfig")
+		local capabilites = require("blink.cmp").get_lsp_capabilities()
+
+		masonConf.setup({
+			ensure_installed = vim.tbl_keys(servers),
+			automatic_installation = true,
 		})
 
-		setup_servers()
+		for name, server in pairs(servers) do
+			vim.lsp.config(name, {
+				capabilities = capabilites,
+				on_attach = on_attach,
+				settings = server,
+				filetypes = (server or {}).filetypes,
+			})
+		end
+
+		vim.lsp.config("sourcekit", {
+			capabilities = {
+				workspace = {
+					didChangeWatchedFiles = {
+						dynamicRegistration = true,
+					},
+				},
+			},
+		})
 	end,
 }

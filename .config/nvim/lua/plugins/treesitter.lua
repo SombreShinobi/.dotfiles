@@ -28,10 +28,11 @@ return {
 					"tsx",
 					"dockerfile",
 					"ocaml",
-					"haskell",
 					"go",
 					"python",
 					"swift",
+					"java",
+					"sql",
 				},
 				highlight = {
 					enable = true,

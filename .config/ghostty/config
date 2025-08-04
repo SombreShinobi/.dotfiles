@@ -1,7 +1,7 @@
 theme = tokyonight
 # background-opacity = 0.9
 
-font-size = 16
+font-size = 19
 font-family = UbuntuMono Nerd Font Mono
 font-family-bold = UbuntuMono Nerd Font Mono Bold
 font-family-italic = UbuntuMono Nerd Font Mono Bold Italic

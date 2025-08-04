@@ -30,5 +30,4 @@ return {
 	},
 	"mbbill/undotree",
 	{ "j-hui/fidget.nvim", opts = {} },
-	{ "laytan/cloak.nvim", opts = {} },
 }

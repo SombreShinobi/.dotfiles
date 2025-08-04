@@ -41,6 +41,8 @@ vim.opt.signcolumn = "yes"
 vim.opt.termguicolors = true
 vim.opt.completeopt = { "menuone", "noselect" }
 
+vim.o.winborder = "single"
+
 vim.opt.mouse = nil
 
 vim.api.nvim_create_autocmd("TextYankPost", {
