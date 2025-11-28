@@ -25,7 +25,6 @@ return {
 			todo.setup({ signs = false })
 
 			vim.keymap.set("n", "<leader>tt", "<cmd>TodoTelescope<CR>")
-			vim.keymap.set("n", "<leader>tb", "<cmd>TodoTrouble<CR>")
 		end,
 	},
 	"mbbill/undotree",
