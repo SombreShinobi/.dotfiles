@@ -15,9 +15,6 @@
 	allowedSignersFile = ""
 [rerere]
 	enabled = true
-
-[includeIf "gitdir:~/Documents/work/"]
-    path = "~/.gitconfig.work"
-
-[includeIf "gitdir:~/Documents/personal/"]
-    path = "~/.gitconfig.personal"
+[user]
+	email = sedlan.sibin@gmail.com
+	name = SombreShinobi

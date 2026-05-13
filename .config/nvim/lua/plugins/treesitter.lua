@@ -45,6 +45,7 @@ return {
 			vim.filetype.add({
 				extension = {
 					templ = "templ",
+					yaml = "helm",
 				},
 			})
 		end,

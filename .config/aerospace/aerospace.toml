@@ -6,14 +6,6 @@ on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 start-at-login = true
 
 [[on-window-detected]]
-    if.app-id = 'com.apple.mail'
-    run = 'move-node-to-workspace 1'
-
-[[on-window-detected]]
-    if.app-id = 'com.apple.dt.Xcode'
-    run = 'move-node-to-workspace 1'
-
-[[on-window-detected]]
     if.app-id = 'com.tidal.desktop'
     run = 'move-node-to-workspace 2'
 
@@ -26,12 +18,16 @@ start-at-login = true
     run = 'move-node-to-workspace 5'
 
 [[on-window-detected]]
-    if.app-id = 'app.zen-browser.zen'
+    if.app-id = 'com.apple.dt.Xcode'
     run = 'move-node-to-workspace 6'
 
 [[on-window-detected]]
     if.app-id = 'com.tinyspeck.slackmacgap'
     run = 'move-node-to-workspace 7'
+
+[[on-window-detected]]
+    if.app-id = 'net.imput.helium'
+    run = 'move-node-to-workspace 8'
 
 [mode.main.binding]
     alt-j =         'focus --boundaries-action wrap-around-the-workspace left'
